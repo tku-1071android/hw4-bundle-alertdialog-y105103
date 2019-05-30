@@ -45,6 +45,9 @@ public class ResultActivity extends AppCompatActivity{
             pic = R.drawable.circle;
         }
         else if(average>=60)
+        {
+
+        }
     }
 
 }
