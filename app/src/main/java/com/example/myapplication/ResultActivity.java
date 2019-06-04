@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +30,7 @@ public class ResultActivity extends AppCompatActivity{
                 "\ndataStructure = "+dataStructure +
                 "\nalgorithm = "+algorithm+
                 "\nsum = " + sum +
-                "\naverage = " nf.format(average);
+                "\naverage = " + nf.format(average);
         tvResult.setText(text);
         alert(average);
     }
@@ -46,8 +47,33 @@ public class ResultActivity extends AppCompatActivity{
         }
         else if(average>=60)
         {
-
+            message="Congratulation!!";
+            title="Pass";
+            pic = R.drawable.circle;
         }
+        else if(average>=40 )
+        {
+            message="oops!!";
+            title="Fail";
+            pic = R.drawable.cancel;
+        }
+        else
+        {
+            message="oh no!!";
+            title="Fail";
+            pic = R.drawable.cancel;
+        }
+
+
+        AlertDialog.Builder builder= new AlertDialog.Builder(this);
+            builder.setMessage(message);
+            builder.setTitle(title);
+            builder.setIcon(pic);
+            builder.show();
     }
+    public void onBackClick(View view){
+        finish();
+    }
+
 
 }
