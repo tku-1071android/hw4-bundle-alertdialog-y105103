@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         bundle.putInt("programming",programming);
         bundle.putInt("dataStructure",dataStructure);
         bundle.putInt("algorithm",algorithm);
+
         intent.putExtras(bundle);
         startActivity(intent);
         
